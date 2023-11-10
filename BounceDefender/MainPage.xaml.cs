@@ -25,13 +25,37 @@ public partial class MainPage : ContentPage
 
 		SemanticScreenReader.Announce(CounterBtn.Text);
 
-		var currentBounds = AbsoluteLayout.GetLayoutBounds(movingBox);
-		
-		//AbsoluteLayout.SetLayoutBounds(movingBox, new Rect(currentBounds.X, currentBounds.Y, currentBounds.Width, currentBounds.Height));
+		//var currentBounds = AbsoluteLayout.GetLayoutBounds(movingBox);
 
-		for (int i = 0;i < 30; i++) {
-			AbsoluteLayout.SetLayoutBounds(movingBox, new Rect(currentBounds.X, currentBounds.Y - i, currentBounds.Width, currentBounds.Height));
+		////AbsoluteLayout.SetLayoutBounds(movingBox, new Rect(currentBounds.X, currentBounds.Y, currentBounds.Width, currentBounds.Height));
+
+		//for (int i = 0;i < 30; i++) {
+		//	AbsoluteLayout.SetLayoutBounds(movingBox, new Rect(currentBounds.X, currentBounds.Y - i, currentBounds.Width, currentBounds.Height));
+		//}
+
+		moveItem(2, 100);
+	}
+
+	private void moveItem(int topLimit, int bottomLimit) {
+		bool downdirection = true;
+		int direction;
+		var currentBounds = AbsoluteLayout.GetLayoutBounds(movingBox);
+
+		if (currentBounds.Y < 300 && downdirection) {
+			direction = 50;
 		}
+		else
+		{
+			direction = -50;
+			downdirection = false;
+		}
+
+
+
+		AbsoluteLayout.SetLayoutBounds(movingBox, new Rect(currentBounds.X, currentBounds.Y + direction, currentBounds.Width, currentBounds.Height));
+		Console.WriteLine(currentBounds.Y);
+
+
 	}
 }
 

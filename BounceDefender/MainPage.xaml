@@ -3,20 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BounceDefender.MainPage">
 
-
+    <ScrollView>
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
             VerticalOptions="Center">
             <!--<Image Source="red_paddle.png" WidthRequest="100" HeightRequest="100" />-->
  
-                <!--<BoxView    
+                <BoxView    
                     WidthRequest="20"
                     HeightRequest="100"
                     Color="Blue"
                     AbsoluteLayout.LayoutFlags="All"
                     VerticalOptions="Center"
-                    HorizontalOptions="StartAndExpand"/>-->
+                    HorizontalOptions="StartAndExpand"/>
             <AbsoluteLayout>
                 <BoxView x:Name="movingBox" Color="Red" WidthRequest="20" HeightRequest="100"
                  AbsoluteLayout.LayoutBounds="0,0,0,0" />
@@ -56,5 +56,6 @@
 
         </VerticalStackLayout>
 
+    </ScrollView>
 
 </ContentPage>
