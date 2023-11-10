@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BounceDefender.MainPage">
+
+
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+            <!--<Image Source="red_paddle.png" WidthRequest="100" HeightRequest="100" />-->
+ 
+                <!--<BoxView    
+                    WidthRequest="20"
+                    HeightRequest="100"
+                    Color="Blue"
+                    AbsoluteLayout.LayoutFlags="All"
+                    VerticalOptions="Center"
+                    HorizontalOptions="StartAndExpand"/>-->
+            <AbsoluteLayout>
+                <BoxView x:Name="movingBox" Color="Red" WidthRequest="20" HeightRequest="100"
+                 AbsoluteLayout.LayoutBounds="0,0,0,0" />
+            </AbsoluteLayout>
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Click me"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
+ 
+            <!--<Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+            <Label
+                Text="Hello, World!"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Welcome Here"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Click me"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />-->
+
+        </VerticalStackLayout>
+
+
+</ContentPage>
