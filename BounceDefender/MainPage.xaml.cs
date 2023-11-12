@@ -41,18 +41,37 @@ public partial class MainPage : ContentPage
 		int direction;
 		var currentBounds = AbsoluteLayout.GetLayoutBounds(movingBox);
 
-		if (currentBounds.Y < 300 && downdirection) {
-			direction = 50;
+		//if (currentBounds.Y < 300 && downdirection) {
+		//	direction = 50;
+		//}
+		//else
+		//{
+		//	direction = -50;
+		//	downdirection = false;
+		//}
+
+
+		if (downdirection == false) {
+				currentBounds.Y += -20;
+			Thread.Sleep(200);
+			if (currentBounds.Y <= 0) {
+				downdirection = false;
+			};
 		}
 		else
 		{
-			direction = -50;
-			downdirection = false;
+			currentBounds.Y += 20;
+			Thread.Sleep(200);
+			if (currentBounds.Y >= 300)
+			{
+				downdirection = true;
+			}
 		}
+		
 
 
 
-		AbsoluteLayout.SetLayoutBounds(movingBox, new Rect(currentBounds.X, currentBounds.Y + direction, currentBounds.Width, currentBounds.Height));
+		AbsoluteLayout.SetLayoutBounds(movingBox, new Rect(currentBounds.X, currentBounds.Y, currentBounds.Width, currentBounds.Height));
 		Console.WriteLine(currentBounds.Y);
 
 
